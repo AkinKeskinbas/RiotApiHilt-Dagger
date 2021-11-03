@@ -1,6 +1,6 @@
-package com.akin.leagueoflegends.data.models.irelia
+package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
-data class ImageX(
+data class Image(
     val full: String,
     val group: String,
     val h: Int,

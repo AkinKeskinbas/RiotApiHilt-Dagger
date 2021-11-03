@@ -1,4 +1,4 @@
-package com.akin.leagueoflegends.data.models
+package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
 import com.google.gson.JsonObject
 

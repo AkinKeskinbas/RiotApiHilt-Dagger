@@ -1,4 +1,4 @@
-package com.akin.leagueoflegends.data.models.irelia
+package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
 data class Info(
     val attack: Int,

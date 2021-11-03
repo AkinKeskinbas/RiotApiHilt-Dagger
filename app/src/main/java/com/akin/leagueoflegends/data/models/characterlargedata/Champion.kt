@@ -1,8 +1,7 @@
-package com.akin.leagueoflegends.data.models.irelia
+package com.akin.leagueoflegends.data.models.characterlargedata
 
 import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
-import org.json.JSONObject
 
 data class Champion(
     @SerializedName("data")

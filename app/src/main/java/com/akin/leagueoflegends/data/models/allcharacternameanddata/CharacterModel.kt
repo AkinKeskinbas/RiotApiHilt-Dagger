@@ -1,4 +1,4 @@
-package com.akin.leagueoflegends.data.models
+package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
 data class CharacterModel(
     val blurb: String,

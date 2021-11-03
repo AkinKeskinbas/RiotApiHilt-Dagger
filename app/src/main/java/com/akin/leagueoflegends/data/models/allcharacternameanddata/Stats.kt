@@ -1,8 +1,8 @@
-package com.akin.leagueoflegends.data.models.irelia
+package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
 data class Stats(
     val armor: Int,
-    val armorperlevel: Int,
+    val armorperlevel: Double,
     val attackdamage: Int,
     val attackdamageperlevel: Int,
     val attackrange: Int,
@@ -12,13 +12,13 @@ data class Stats(
     val critperlevel: Int,
     val hp: Int,
     val hpperlevel: Int,
-    val hpregen: Double,
-    val hpregenperlevel: Double,
+    val hpregen: Int,
+    val hpregenperlevel: Int,
     val movespeed: Int,
     val mp: Int,
     val mpperlevel: Int,
     val mpregen: Int,
-    val mpregenperlevel: Double,
+    val mpregenperlevel: Int,
     val spellblock: Int,
     val spellblockperlevel: Double
 )

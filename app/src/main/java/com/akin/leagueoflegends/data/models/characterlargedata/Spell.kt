@@ -1,4 +1,4 @@
-package com.akin.leagueoflegends.data.models.irelia
+package com.akin.leagueoflegends.data.models.characterlargedata
 
 data class Spell(
     val cooldown: List<Double>,
