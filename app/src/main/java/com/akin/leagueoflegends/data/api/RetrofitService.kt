@@ -7,14 +7,14 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RetrofitService {
-    @GET("11.22.1/data/tr_TR/champion/{championName}.json")
+    @GET("data/tr_TR/champion/{championName}.json")
     suspend fun getChampion(@Path("championName") championName: String): Response<Champion>
 
-    @GET("11.22.1/data/tr_TR/champion/img/champion/splash/{championName}_{skinNumber}.jpg")
+    @GET("data/tr_TR/champion/img/champion/splash/{championName}_{skinNumber}.jpg")
     suspend fun getChampionImage(
         @Path("championName") championName: String,
         @Path("skinNumber") skinNumber: String
     ): Response<Champion>
-    @GET("11.22.1/data/tr_TR/champion.json")
+    @GET("data/tr_TR/champion.json")
     suspend fun getChampionNames():Response<CharacterName>
 }

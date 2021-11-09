@@ -9,6 +9,7 @@ import com.akin.leagueoflegends.data.models.allcharacternameanddata.CharacterMod
 import com.akin.leagueoflegends.data.models.characterlargedata.Character
 import com.akin.leagueoflegends.domains.repository.ChampionRepository
 import com.akin.leagueoflegends.util.Statics.BASE_IMAGE_URL
+import com.akin.leagueoflegends.util.Statics.BASE_SQUARE_URL
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -70,6 +71,11 @@ constructor(
         println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
         return BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg"
     }
+    fun getChampionSquareImage(championName: String): String {
+
+       // println(BASE_SQUARE_URL + "${championName}.png")
+        return BASE_SQUARE_URL + "${championName}.png"
+    }
 
     private fun getChampionNames() {
         viewModelScope.launch {
@@ -79,7 +85,7 @@ constructor(
                     val gson = Gson()
                     val gsonString = gson.toJson(response.body()).toString()
                     val obj = JsonParser().parse(gsonString).asJsonObject["data"]
-                    println(obj.asJsonObject.keySet())
+                   // println(obj.asJsonObject.keySet())
                     val list = mutableListOf<CharacterModel>()
                     val beta = obj.asJsonObject.keySet()
                     beta.forEach {

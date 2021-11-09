@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.akin.leagueoflegends.databinding.ActivityMainBinding
 import com.akin.leagueoflegends.domains.viewmodel.ChampionFragmentViewModel
 import com.akin.leagueoflegends.util.Statics.BASE_URL
@@ -26,45 +28,17 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var list: List<String>
-    private val viewModel: ChampionFragmentViewModel by viewModels()
+
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        getChampion("Akali")
-
-        viewModel.championNameAndData.observe(this,{
-            println(it.size)
-        })
-        viewModel.response.observe(this,{
-            println(it.enemytips)
-            binding.apply {
-                val test = getChampionNumber("Akali","32")
-                println("test::${test}")
-                image.loadString(test, makePlaceHolder(this@MainActivity))
-              // Glide.with(this@MainActivity).load(test).fitCenter().into(image)
-            }
-        })
-
-
-
-
-
-
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
+        navController = navHostFragment.navController
 
     }
-
-      fun  getChampion(name:String) {
-        viewModel.getChampion(name)
-    }
-    fun  getChampionNumber(name:String, number:String):String {
-        println("championNumberFunc")
-     return   viewModel.getChampionSkinNumbers(name,number)
-    }
-
-
 
 
 }
