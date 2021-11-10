@@ -1,5 +1,9 @@
 package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class CharacterModel(
     val blurb: String,
     val id: String,
@@ -12,4 +16,4 @@ data class CharacterModel(
     val tags: List<String>,
     val title: String,
     val version: String
-)
+):Parcelable

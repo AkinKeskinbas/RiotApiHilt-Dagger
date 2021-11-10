@@ -1,5 +1,9 @@
 package com.akin.leagueoflegends.data.models.allcharacternameanddata
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Stats(
     val armor: Int,
     val armorperlevel: Double,
@@ -21,4 +25,4 @@ data class Stats(
     val mpregenperlevel: Int,
     val spellblock: Int,
     val spellblockperlevel: Double
-)
+):Parcelable

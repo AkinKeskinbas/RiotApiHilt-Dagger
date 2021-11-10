@@ -3,11 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/home2">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/home2"
-        android:name="com.akin.leagueoflegends.ui.fragment.Home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/homeFragment"
+        android:name="com.akin.leagueoflegends.ui.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.akin.leagueoflegends.ui.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="characterModel"
+            app:argType="com.akin.leagueoflegends.data.models.allcharacternameanddata.CharacterModel" />
+    </fragment>
 </navigation>

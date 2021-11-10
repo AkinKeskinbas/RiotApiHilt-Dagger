@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.akin.leagueoflegends.data.models.characterlargedata.Character
 import com.akin.leagueoflegends.databinding.ActivityMainBinding
 import com.akin.leagueoflegends.domains.viewmodel.ChampionFragmentViewModel
+import com.akin.leagueoflegends.interfaces.SendData
+import com.akin.leagueoflegends.ui.fragment.DescFragment
 import com.akin.leagueoflegends.util.Statics.BASE_URL
 import com.akin.leagueoflegends.util.loadString
 import com.akin.leagueoflegends.util.makePlaceHolder

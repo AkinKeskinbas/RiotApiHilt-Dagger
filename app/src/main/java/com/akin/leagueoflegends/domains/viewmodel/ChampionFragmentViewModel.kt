@@ -34,6 +34,8 @@ constructor(
     private val _championNameAndData = MutableLiveData<List<CharacterModel>>()
     val championNameAndData: LiveData<List<CharacterModel>> = _championNameAndData
 
+
+
     lateinit var test: LiveData<Deferred<String>>
 
     init {
@@ -68,7 +70,7 @@ constructor(
 
     fun getChampionSkinNumbers(championName: String, championSkinNumber: String): String {
 
-        println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
+        //println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
         return BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg"
     }
     fun getChampionSquareImage(championName: String): String {

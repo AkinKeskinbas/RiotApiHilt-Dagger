@@ -12,7 +12,8 @@ import com.akin.leagueoflegends.databinding.HomeItemBinding
 import com.akin.leagueoflegends.util.loadString
 import com.akin.leagueoflegends.util.makePlaceHolder
 
-class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(var clickListener: (data: CharacterModel) -> Unit = {}) :
+    RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     private var heroList: List<CharacterModel> = mutableListOf()
     private var heroImageList: List<String> = mutableListOf()
 
@@ -33,6 +34,10 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
             val positionedHeroImageList = heroImageList[position]
             nameText.text = positionedHeroList.name
             imageHome.loadString(positionedHeroImageList, makePlaceHolder(holder.itemView.context))
+            imageHome.setOnClickListener {
+                clickListener(positionedHeroList)
+
+            }
         }
     }
 
@@ -41,7 +46,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun loadCollectionsData(items: List<CharacterModel>, images:List<String>) {
+    fun loadCollectionsData(items: List<CharacterModel>, images: List<String>) {
         this.heroList = items
         this.heroImageList = images
         notifyDataSetChanged()
