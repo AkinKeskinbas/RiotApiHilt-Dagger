@@ -42,10 +42,10 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     }
 
-    private fun getChampionNumber(name: String, number: String): String {
-        println("championNumberFunc")
-        return viewModel.getChampionSkinNumbers(name, number)
-    }
+//    private fun getChampionNumber(name: String, number: String): String {
+//        println("championNumberFunc")
+//        return viewModel.getChampionSkinNumbers(name, number)
+//    }
 
     private fun setTabLayout() {
 

@@ -68,11 +68,17 @@ constructor(
         }
     }
 
-    fun getChampionSkinNumbers(championName: String, championSkinNumber: String): String {
+    fun getChampionSkinNumbers(championName: String, championSkinNumber: String, type:String): String {
 
         //println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
-        return BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg"
+        return type + "${championName}_${championSkinNumber}.jpg"
     }
+    fun getChampionSkillImages(skillName: String, type:String): String {
+
+        //println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
+        return type + "${skillName}.png"
+    }
+
     fun getChampionSquareImage(championName: String): String {
 
        // println(BASE_SQUARE_URL + "${championName}.png")

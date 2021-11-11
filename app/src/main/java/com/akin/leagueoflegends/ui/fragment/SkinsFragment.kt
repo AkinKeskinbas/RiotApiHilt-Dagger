@@ -14,6 +14,7 @@ import com.akin.leagueoflegends.interfaces.ITabbedFragment
 import com.akin.leagueoflegends.interfaces.SendData
 import com.akin.leagueoflegends.ui.adapters.SkinsAdapter
 import com.akin.leagueoflegends.ui.base.BaseFragment
+import com.akin.leagueoflegends.util.Statics.BASE_IMAGE_URL
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,11 +29,13 @@ class SkinsFragment(private var character: Character) : BaseFragment<FragmentSki
         val rc = binding.rcSkins
         rc.adapter = adapter
         character.skins.forEach {
-            list.add( viewModel.getChampionSkinNumbers(character.id,it.num.toString()))
+            list.add( viewModel.getChampionSkinNumbers(type = BASE_IMAGE_URL,championName = character.id, championSkinNumber = it.num.toString()))
+            println(viewModel.getChampionSkinNumbers(BASE_IMAGE_URL,character.id,it.num.toString()))
+
 
         }
-        adapter.loadCollectionsData(list)
 
+        adapter.loadCollectionsData(list)
         println(character.skins[0])
     }
 
