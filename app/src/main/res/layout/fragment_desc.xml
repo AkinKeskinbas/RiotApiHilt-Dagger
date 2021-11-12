@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context=".ui.fragment.DescFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/descImage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp" />
 
-</FrameLayout>
+    <TextView
+        android:fontFamily="@font/riotiks"
+        android:textSize="24sp"
+        android:textColor="@color/titleColor"
+        android:textStyle="bold"
+        android:id="@+id/descTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/description" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/descText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/lorem" />
+
+    <TextView
+        android:fontFamily="@font/riotiks"
+        android:textSize="24sp"
+        android:textColor="@color/titleColor"
+        android:textStyle="bold"
+        android:id="@+id/allyTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/ally_tips" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/allyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/lorem" />
+
+    <TextView
+        android:fontFamily="@font/riotiks"
+        android:textSize="24sp"
+        android:textColor="@color/titleColor"
+        android:textStyle="bold"
+        android:id="@+id/enemyTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/enemy_tips" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/enemyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/lorem" />
+
+</LinearLayout>

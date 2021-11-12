@@ -1,5 +1,7 @@
 package com.akin.leagueoflegends.ui.fragment
 
+import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +16,7 @@ import com.akin.leagueoflegends.databinding.FragmentHomeBinding
 import com.akin.leagueoflegends.domains.viewmodel.ChampionFragmentViewModel
 import com.akin.leagueoflegends.ui.adapters.HomeAdapter
 import com.akin.leagueoflegends.ui.base.BaseFragment
+import com.akin.leagueoflegends.util.getAppName
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,11 +26,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private var nameList: MutableList<String> = mutableListOf()
     private val viewModel: ChampionFragmentViewModel by viewModels()
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        activity?.title = requireContext().getAppName()
         val gridLayoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
         binding.rcHome.layoutManager = gridLayoutManager
         val rcHomeAdapter = HomeAdapter(clickListener = {
@@ -42,7 +44,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
                 val test2 = getChampionSquareImage(characterModel.id)
                 imageList.add(test2)
-
             }
             rcHomeAdapter.loadCollectionsData(it,imageList)
             println(nameList)
@@ -54,9 +55,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     private fun getChampionSquareImage(name: String): String {
-
         return viewModel.getChampionSquareImage(name)
-
     }
 
 

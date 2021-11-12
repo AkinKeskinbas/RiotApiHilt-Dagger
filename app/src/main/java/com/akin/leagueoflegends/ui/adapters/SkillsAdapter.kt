@@ -30,6 +30,7 @@ class SkillsAdapter( ) :
         holder.binding.apply {
             skillNameText.text =  heroDataList[0].spells[position].name
             skillText.text =  heroDataList[0].spells[position].description
+            skillCostText.text =  heroDataList[0].spells[position].costBurn
             println(heroImageList[position])
             skillImage.loadString(heroImageList[position], makePlaceHolder(holder.itemView.context))
         }

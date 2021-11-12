@@ -16,7 +16,7 @@
         android:includeFontPadding="false"
         android:text="@string/choose_your_champion"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="#FF5151"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

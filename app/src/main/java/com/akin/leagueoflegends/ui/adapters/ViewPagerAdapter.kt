@@ -4,10 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.akin.leagueoflegends.data.models.allcharacternameanddata.CharacterModel
 import com.akin.leagueoflegends.data.models.characterlargedata.Character
-import com.akin.leagueoflegends.interfaces.ITabbedFragment
-import com.akin.leagueoflegends.interfaces.SendData
 import com.akin.leagueoflegends.ui.fragment.DescFragment
 import com.akin.leagueoflegends.ui.fragment.SkillsFragment
 import com.akin.leagueoflegends.ui.fragment.SkinsFragment

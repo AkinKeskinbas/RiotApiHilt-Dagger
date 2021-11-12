@@ -34,10 +34,6 @@ constructor(
     private val _championNameAndData = MutableLiveData<List<CharacterModel>>()
     val championNameAndData: LiveData<List<CharacterModel>> = _championNameAndData
 
-
-
-    lateinit var test: LiveData<Deferred<String>>
-
     init {
 
         getChampionNames()
@@ -52,15 +48,10 @@ constructor(
                 val obj = JsonParser().parse(gsonString).asJsonObject[championName]
                 val teta = gson.fromJson(obj, Character::class.java)
 
-
                 _response.postValue(teta)
                 teta.skins.forEach {
                     _championSkinNumbers.add(it.num.toString())
                 }
-
-                println("listelemebitti:::${championSkinNumbers}")
-
-
 
             } else {
                 Log.d("Tag", "Error:${response.message()}")
@@ -68,41 +59,40 @@ constructor(
         }
     }
 
-    fun getChampionSkinNumbers(championName: String, championSkinNumber: String, type:String): String {
+    fun getChampionImageWithSkinNumbers(
+        championName: String,
+        championSkinNumber: String,
+        type: String
+    ): String {
 
-        //println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
         return type + "${championName}_${championSkinNumber}.jpg"
     }
-    fun getChampionSkillImages(skillName: String, type:String): String {
 
-        //println(BASE_IMAGE_URL + "${championName}_${championSkinNumber}.jpg")
+    fun getChampionSkillImages(skillName: String, type: String): String {
+
         return type + "${skillName}.png"
     }
 
     fun getChampionSquareImage(championName: String): String {
 
-       // println(BASE_SQUARE_URL + "${championName}.png")
         return BASE_SQUARE_URL + "${championName}.png"
     }
 
     private fun getChampionNames() {
         viewModelScope.launch {
-            val test = repository.getCharacterNames().let { response ->
+            repository.getCharacterNames().let { response ->
                 println(response)
                 if (response.isSuccessful) {
                     val gson = Gson()
                     val gsonString = gson.toJson(response.body()).toString()
                     val obj = JsonParser().parse(gsonString).asJsonObject["data"]
-                   // println(obj.asJsonObject.keySet())
                     val list = mutableListOf<CharacterModel>()
                     val beta = obj.asJsonObject.keySet()
                     beta.forEach {
                         val teta = gson.fromJson(obj.asJsonObject[it], CharacterModel::class.java)
                         list.add(teta)
-
                     }
                     _championNameAndData.value = list
-
 
                 } else {
                     println(response.message())

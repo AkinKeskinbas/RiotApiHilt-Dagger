@@ -5,4 +5,7 @@
     <string name="choose_your_champion">Choose Your Champion</string>
     <string name="skins_fragment">Skins Fragment</string>
     <string name="lorem">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500\'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır.</string>
+    <string name="description">Lore</string>
+    <string name="ally_tips">Ally Tips</string>
+    <string name="enemy_tips">Enemy Tips</string>
 </resources>
